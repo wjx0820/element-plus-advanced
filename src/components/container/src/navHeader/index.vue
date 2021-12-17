@@ -9,11 +9,13 @@
 
  
 <script lang='ts' setup>
-let props = defineProps(['collapse'])
+const props = defineProps<{
+  collapse: boolean
+}>()
 
-let emits = defineEmits(['update:collapse'])
+const emits = defineEmits(['update:collapse'])
 
-let toggle = () => {
+const toggle = () => {
   emits('update:collapse', !props.collapse)
 }
 </script>
@@ -21,7 +23,7 @@ let toggle = () => {
  
 <style scoped>
 .header {
-  height: 60px;
+  height: 56px;
   padding: 0 20px;
   display: flex;
   align-items: center;

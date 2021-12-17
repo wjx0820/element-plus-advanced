@@ -20,7 +20,7 @@ import NavHeader from './navHeader/index.vue'
 import { ref } from 'vue';
 
 
-let isCollapse = ref(false)
+const isCollapse = ref(false)
 
 </script>
  

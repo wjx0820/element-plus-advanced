@@ -9,7 +9,7 @@ const app = createApp(App);
 
 // 全局注册图标，牺牲一点性能
 // el-icon-xxx
-for (let i in Icons) {
+for (const i in Icons) {
   // 注册全部组件
   app.component(`el-icon-${i.toLowerCase()}`, (Icons as any)[i]);
 }
