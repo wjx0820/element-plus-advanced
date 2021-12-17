@@ -1,9 +1,6 @@
 
 <template>
   <router-view></router-view>
-  <br />
-  <el-button>I am ELButton</el-button>
-  <el-icon-edit />
 </template>
 
 <style lang='scss'>
@@ -14,5 +11,12 @@
 svg {
   width: 1em;
   height: 1em;
+}
+html,
+body,
+#app,
+.el-container,
+.el-menu {
+  height: 100%;
 }
 </style>
