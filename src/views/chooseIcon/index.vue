@@ -1,5 +1,5 @@
 <template>
-  <choose-icon title="选择图标">图标选择器</choose-icon>
+  <m-choose-icon title="选择图标">图标选择器</m-choose-icon>
 </template>
 
  

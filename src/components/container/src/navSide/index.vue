@@ -10,6 +10,10 @@
     </el-menu-item>
     <el-menu-item index="3">
       <i class="el-icon-menu"></i>
+      <span slot="title">省市区选择</span>
+    </el-menu-item>
+    <el-menu-item index="4">
+      <i class="el-icon-menu"></i>
       <span slot="title">趋势标记</span>
     </el-menu-item>
   </el-menu>

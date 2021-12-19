@@ -3,6 +3,6 @@ import chooseArea from "./src/index.vue";
 
 export default {
   install(app: App) {
-    app.component("choose-area", chooseArea);
+    app.component("m-choose-area", chooseArea);
   },
 };

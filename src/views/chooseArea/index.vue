@@ -1,5 +1,5 @@
 <template>
-  <choose-area @change="changeArea"></choose-area>
+  <m-choose-area @change="changeArea"></m-choose-area>
 </template>
 
  
