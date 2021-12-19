@@ -4,8 +4,6 @@
 
  
 <script lang='ts' setup>
-import ChooseArea from '@/components/chooseArea/src/index.vue'
-
 const changeArea = (data: any) => {
   console.log(data)
 }

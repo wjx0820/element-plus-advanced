@@ -4,7 +4,6 @@
 
  
 <script lang='ts' setup>
-import ChooseIcon from '@/components/chooseIcon/src/index.vue'
 
 </script>
 
