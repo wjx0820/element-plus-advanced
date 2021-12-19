@@ -29,9 +29,6 @@
 import { ref, watch } from 'vue';
 import allAreas from '../lib/pca-code.json'
 
-// 分发事件给父组件
-let emits = defineEmits(['change'])
-
 export interface AreaItem {
   name: string,
   code: string,
@@ -42,6 +39,15 @@ export interface Data {
   name: string,
   code: string
 }
+
+// 分发事件给父组件
+const emits = defineEmits<{
+  (e: 'change', data: {
+    province: Data
+    city: Data
+    area: Data
+  }): void
+}>()
 
 const province = ref<string>('')
 const city = ref<string>('')
