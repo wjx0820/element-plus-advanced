@@ -24,7 +24,7 @@
 import { PropType } from 'vue';
 import { MenuItem } from './types'
 
-let props = defineProps({
+const props = defineProps({
   // 导航菜单的数据
   data: {
     type: Array as PropType<MenuItem[]>,

@@ -46,7 +46,7 @@
 import { PropType } from 'vue'
 import { ListOptions, ActionOptions, ListItem } from './types'
 
-let props = defineProps({
+const props = defineProps({
   list: {
     type: Array as PropType<ListOptions[]>,
     required: true
@@ -57,12 +57,12 @@ let props = defineProps({
   }
 })
 
-let emits = defineEmits(['clickItem', 'clickAction'])
+const emits = defineEmits(['clickItem', 'clickAction'])
 
-let clickItem = (item: ListItem, index: number) => {
+const clickItem = (item: ListItem, index: number) => {
   emits('clickItem', { item, index })
 }
-let clickAction = (item: ActionOptions, index: number) => {
+const clickAction = (item: ActionOptions, index: number) => {
   emits('clickAction', { item, index })
 }
 </script>

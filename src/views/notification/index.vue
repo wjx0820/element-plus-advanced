@@ -15,10 +15,10 @@
 <script lang='ts' setup>
 import { list, actions } from './data'
 
-let clickItem = (val: any) => {
+const clickItem = (val: any) => {
   console.log(val)
 }
-let clickAction = (val: any) => {
+const clickAction = (val: any) => {
   console.log(val)
 }
 </script>

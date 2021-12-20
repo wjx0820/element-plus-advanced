@@ -20,15 +20,14 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
-    let attrs = useAttrs()
-    console.log(attrs)
+    const attrs = useAttrs()
 
     // 渲染无限层级菜单
-    let renderMenu = (data: MenuItem[]) => {
+    const renderMenu = (data: MenuItem[]) => {
       return data.map((item: MenuItem) => {
         item.i = `el-icon-${item.icon?.toLowerCase()}`
         // sub-menu的插槽
-        let slots = {
+        const slots = {
           title: () => {
             return (
               <>

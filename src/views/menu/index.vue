@@ -7,7 +7,7 @@
 
  
 <script lang='ts' setup>
-let data1 = [
+const data1 = [
   {
     name: '导航1',
     index: '1',
@@ -36,7 +36,7 @@ let data1 = [
     ]
   }
 ]
-let data2 = [
+const data2 = [
   {
     name: '导航1',
     index: '1',
