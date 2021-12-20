@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
-import ElementPlus from "unplugin-element-plus/vite";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 
 // 路径查找
 const pathResolve = (dir: string): string => {
@@ -15,7 +15,7 @@ const alias: Record<string, string> = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), ElementPlus()],
+  plugins: [vue(), vueJsx()],
   server: {
     port: 7777,
   },
