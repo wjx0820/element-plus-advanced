@@ -1,9 +1,21 @@
 <template>
-  <div class="notification">
-    <el-badge :value="value" :max="max" :is-dot="isDot">
-      <component :is="`el-icon-${icon.toLowerCase()}`"></component>
-    </el-badge>
-  </div>
+  <el-popover
+    popper-class="notification-popper-class"
+    placement="bottom"
+    :width="300"
+    trigger="click"
+  >
+    <template #default>
+      <slot></slot>
+    </template>
+    <template #reference>
+      <div class="notification">
+        <el-badge :value="value" :max="max" :is-dot="isDot">
+          <component :is="`el-icon-${icon.toLowerCase()}`"></component>
+        </el-badge>
+      </div>
+    </template>
+  </el-popover>
 </template>
 
  
