@@ -1,6 +1,7 @@
 import { defineComponent, PropType, useAttrs } from "vue";
 import * as Icons from '@element-plus/icons-vue'
 import { MenuItem } from './types'
+import './styles/index.scss'
 
 export default defineComponent({
   props: {
@@ -77,7 +78,7 @@ export default defineComponent({
     const attrs = useAttrs()
 
     return () => (
-      <el-menu default-active={props.defaultActive} router={props.router} {...attrs}>
+      <el-menu class="menu-icon-svg" default-active={props.defaultActive} router={props.router} {...attrs}>
         {renderMenu(props.data)}
       </el-menu>
     )

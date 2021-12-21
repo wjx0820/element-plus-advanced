@@ -37,6 +37,10 @@ const props = withDefaults(defineProps<Props>(), {
 
  
 <style lang='scss' scoped>
+svg {
+  width: 1em;
+  height: 1em;
+}
 .notification {
   cursor: pointer;
 }
