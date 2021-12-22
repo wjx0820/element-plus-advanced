@@ -60,9 +60,14 @@ const data = [
     index: '/calendar'
   },
   {
-    icon: 'Setting',
+    icon: 'Grid',
     name: '表单',
     index: '/form'
+  },
+  {
+    icon: 'Tickets',
+    name: '弹出框表单',
+    index: '/modalForm'
   },
   {
     icon: 'ShoppingBag',

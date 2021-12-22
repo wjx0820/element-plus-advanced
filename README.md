@@ -20,3 +20,4 @@
 
 - [defineExpose](<(https://v3.vuejs.org/api/sfc-script-setup.html#defineexpose)>) 重写表单重置方法
   - vue3 移除了$children,因此父组件要获取子组件的实例和方法，需要通过 defineExpose
+  - ts 支持有待加强

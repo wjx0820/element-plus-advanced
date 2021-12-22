@@ -86,10 +86,6 @@ const props = defineProps({
   }
 })
 
-// const props = defineProps<{
-//   options: FormOptions[]
-// }>()
-
 const emits = defineEmits([
   'on-preview',
   'on-remove',
@@ -150,12 +146,20 @@ const resetFields = () => {
     edit.value!.txt.html(editorItem.value)
   }
 }
+// 表单验证方法
+const validate = () => {
+  return form.value!.validate
+}
+// 获取表单数据
+const getFormData = () => {
+  return model.value
+}
 
 // 分发方法
 defineExpose({
   resetFields,
-  // validate,
-  // getFormData
+  validate,
+  getFormData
 })
 
 
