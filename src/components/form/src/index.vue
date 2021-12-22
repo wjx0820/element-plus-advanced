@@ -1,5 +1,6 @@
 <template>
   <el-form
+    ref="form"
     v-if="model"
     :model="model"
     :rules="rules"
@@ -59,6 +60,9 @@
         </component>
       </el-form-item>
     </template>
+    <el-form-item>
+      <slot name="action" :form="form" :model="model"></slot>
+    </el-form-item>
   </el-form>
 </template>
 
@@ -99,6 +103,8 @@ const emits = defineEmits([
 
 const model = ref<any>(null)
 const rules = ref<any>(null)
+
+const form = ref<FormInstance | null>()
 
 // 初始化表单
 const initForm = () => {

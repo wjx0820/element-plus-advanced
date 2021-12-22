@@ -17,13 +17,18 @@
       <template #uploadTip>
         <div style="color: #ccc;font-size: 12px;">jpg/png files with a size less than 500kb</div>
       </template>
+      <template #action="{ form, model }">
+        <el-button type="primary" @click="submitForm(form, model)">提交</el-button>
+        <el-button @click="resetForm">重置</el-button>
+      </template>
     </m-form>
   </div>
 </template>
 
  
 <script lang='ts' setup>
-import { FormOptions } from '@/components/form/src/types/types';
+import { ref } from 'vue'
+import { FormInstance, FormOptions } from '@/components/form/src/types/types';
 import { ElMessage, ElMessageBox } from 'element-plus';
 
 const options: FormOptions[] = [
@@ -200,6 +205,23 @@ const handleChange = (val: any) => {
 const handleBeforeUpload = (val: any) => {
   console.log('handleBeforeUpload')
   console.log(val)
+}
+
+const form = ref()
+
+const submitForm = (form: FormInstance, model: any) => {
+  form.validate((valid) => {
+    if (valid) {
+      console.log(model)
+      ElMessage.success('提交成功')
+    } else {
+      ElMessage.error('表单填写有误,请检查')
+    }
+  })
+}
+
+const resetForm = () => {
+  form.value.resetFields()
 }
 </script>
 
