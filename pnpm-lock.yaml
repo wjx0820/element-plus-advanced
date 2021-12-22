@@ -16,6 +16,7 @@ specifiers:
   vue: ^3.2.16
   vue-router: ^4.0.12
   vue-tsc: ^0.3.0
+  wangeditor: ^4.7.10
 
 dependencies:
   '@element-plus/icons-vue': 0.2.4_vue@3.2.26
@@ -24,6 +25,7 @@ dependencies:
   lodash-es: 4.17.21
   vue: 3.2.26
   vue-router: 4.0.12_vue@3.2.26
+  wangeditor: 4.7.10
 
 devDependencies:
   '@types/lodash-es': 4.17.5
@@ -296,6 +298,21 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@babel/runtime-corejs3/7.16.5:
+    resolution: {integrity: sha512-F1pMwvTiUNSAM8mc45kccMQxj31x3y3P+tA/X8hKNWp3/hUsxdGxZ3D3H8JIkxtfA8qGkaBTKvcmvStaYseAFw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      core-js-pure: 3.20.0
+      regenerator-runtime: 0.13.9
+    dev: false
+
+  /@babel/runtime/7.16.5:
+    resolution: {integrity: sha512-TXWihFIS3Pyv5hzR7j6ihmeLkZfrXGxAr5UfSl8CHf+6q/wpiYDkUau0czckpYG8QmnCIuPpdLtuA9VmuGGyMA==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.9
+    dev: false
 
   /@babel/template/7.16.0:
     resolution: {integrity: sha512-MnZdpFD/ZdYhXwiunMqqgyZyucaYsbL0IrjoGjaVhGilz+x8YB++kRfygSOIj1yOtWKPlx7NBp+9I1RQSgsd5A==}
@@ -720,6 +737,11 @@ packages:
     dependencies:
       safe-buffer: 5.1.2
     dev: true
+
+  /core-js-pure/3.20.0:
+    resolution: {integrity: sha512-qsrbIwWSEEYOM7z616jAVgwhuDDtPLwZSpUsU3vyUkHYqKTf/uwOJBZg2V7lMurYWkpVlaVOxBrfX0Q3ppvjfg==}
+    requiresBuild: true
+    dev: false
 
   /csstype/2.6.19:
     resolution: {integrity: sha512-ZVxXaNy28/k3kJg0Fou5MiYpp88j7H9hLZp8PDC3jV0WFjfH5E9xHb56L0W59cPbKbcHXeP4qyT8PrHp8t6LcQ==}
@@ -1343,6 +1365,10 @@ packages:
       picomatch: 2.3.0
     dev: true
 
+  /regenerator-runtime/0.13.9:
+    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+    dev: false
+
   /request-light/0.5.5:
     resolution: {integrity: sha512-AvjfJuhyT6dYfhtIBF+IpTPQco+Td1QJ6PsIJ5xui110vQ5p9HxHk+m1XJqXazLQT6CxxSx9eNv6R/+fu4bZig==}
     dev: true
@@ -1453,6 +1479,10 @@ packages:
   /token-stream/1.0.0:
     resolution: {integrity: sha1-zCAOqyYT9BZtJ/+a/HylbUnfbrQ=}
     dev: true
+
+  /tslib/2.3.1:
+    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+    dev: false
 
   /typescript/4.5.4:
     resolution: {integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==}
@@ -1653,6 +1683,14 @@ packages:
       '@vue/runtime-dom': 3.2.26
       '@vue/server-renderer': 3.2.26_vue@3.2.26
       '@vue/shared': 3.2.26
+    dev: false
+
+  /wangeditor/4.7.10:
+    resolution: {integrity: sha512-cUlPuPMaie0b4YqrA5VOu7myRiIn5+xp2aspS/PQLgmGuPum5Y037czT6HyOnDaSZ9U6wXsKh7nNYEnVsJAPhg==}
+    dependencies:
+      '@babel/runtime': 7.16.5
+      '@babel/runtime-corejs3': 7.16.5
+      tslib: 2.3.1
     dev: false
 
   /with/7.0.2:

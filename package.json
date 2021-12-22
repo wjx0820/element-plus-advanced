@@ -12,7 +12,8 @@
     "element-plus": "^1.2.0-beta.6",
     "lodash-es": "^4.17.21",
     "vue": "^3.2.16",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "wangeditor": "^4.7.10"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.5",

@@ -1,6 +1,7 @@
 <template>
   <div>
     <m-form
+      ref="form"
       label-width="100px"
       :options="options"
       @on-change="handleChange"
@@ -172,6 +173,20 @@ const options: FormOptions[] = [
         trigger: 'blur'
       }
     ],
+  },
+  {
+    type: 'editor',
+    value: '',
+    prop: 'desc',
+    label: '描述',
+    placeholder: '请输入描述',
+    rules: [
+      {
+        required: true,
+        message: '描述不能为空',
+        trigger: 'blur'
+      }
+    ]
   }
 ]
 
@@ -207,7 +222,7 @@ const handleBeforeUpload = (val: any) => {
   console.log(val)
 }
 
-const form = ref()
+
 
 const submitForm = (form: FormInstance, model: any) => {
   form.validate((valid) => {
@@ -219,6 +234,8 @@ const submitForm = (form: FormInstance, model: any) => {
     }
   })
 }
+
+const form = ref()
 
 const resetForm = () => {
   form.value.resetFields()

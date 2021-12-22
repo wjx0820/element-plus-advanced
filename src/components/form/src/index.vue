@@ -38,6 +38,7 @@
           <slot name="uploadArea"></slot>
           <slot name="uploadTip"></slot>
         </el-upload>
+        <div id="editor" v-if="item.type === 'editor'"></div>
       </el-form-item>
       <el-form-item
         v-if="item.children && item.children.length"
@@ -71,6 +72,7 @@
 import { PropType, ref, onMounted, watch, nextTick } from 'vue'
 import { FormInstance, FormOptions } from './types/types'
 import { cloneDeep } from 'lodash-es'
+import WangEditor from "wangeditor"
 
 const props = defineProps({
   // 表单的配置项
@@ -105,6 +107,7 @@ const model = ref<any>(null)
 const rules = ref<any>(null)
 
 const form = ref<FormInstance | null>()
+const edit = ref<WangEditor>()
 
 // 初始化表单
 const initForm = () => {
@@ -114,27 +117,47 @@ const initForm = () => {
     props.options.map((item: FormOptions) => {
       m[item.prop!] = item.value
       r[item.prop!] = item.rules
-      // if (item.type === 'editor') {
-      //   // 初始化富文本
-      //   nextTick(() => {
-      //     if (document.getElementById('editor')) {
-      //       const editor = new E('#editor')
-      //       editor.config.placeholder = item.placeholder!
-      //       editor.create()
-      //       // 初始化富文本的内容
-      //       editor.txt.html(item.value)
-      //       editor.config.onchange = (newHtml: string) => {
-      //         model.value[item.prop!] = newHtml
-      //       }
-      //       edit.value = editor
-      //     }
-      //   })
-      // }
+      if (item.type === 'editor') {
+        // 初始化富文本
+        nextTick(() => {
+          if (document.getElementById('editor')) {
+            const editor = new WangEditor('#editor')
+            editor.config.placeholder = item.placeholder!
+            editor.create()
+            // 初始化富文本的内容
+            editor.txt.html(item.value)
+            editor.config.onchange = (newHtml: string) => {
+              model.value[item.prop!] = newHtml
+            }
+            edit.value = editor
+          }
+        })
+      }
     })
     model.value = cloneDeep(m)
     rules.value = cloneDeep(r)
   }
 }
+
+// 重置表单
+const resetFields = () => {
+  // 重置element-plus的表单
+  form.value!.resetFields()
+  // 重置富文本编辑器的内容
+  // 获取到富文本的配置项
+  if (props.options && props.options.length) {
+    let editorItem = props.options.find(item => item.type === 'editor')!
+    edit.value!.txt.html(editorItem.value)
+  }
+}
+
+// 分发方法
+defineExpose({
+  resetFields,
+  // validate,
+  // getFormData
+})
+
 
 onMounted(() => {
   initForm()

@@ -17,3 +17,6 @@
     2. 完善我们封装表单的类型，支持 ts
     3. 封装的表单要具备`element-plus`原表单的所有功能
     4. 集成第三方的插件: markdown 编辑器，富文本编辑器...
+
+- [defineExpose](<(https://v3.vuejs.org/api/sfc-script-setup.html#defineexpose)>) 重写表单重置方法
+  - vue3 移除了$children,因此父组件要获取子组件的实例和方法，需要通过 defineExpose
