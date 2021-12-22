@@ -27,7 +27,7 @@ export interface FormOptions {
     | "upload"
     | "editor";
   // 表单项的值
-  value: any;
+  value?: any;
   // 表单项label
   label?: string;
   // 表单项的标识
@@ -46,4 +46,23 @@ export interface FormOptions {
   };
   // 表单项的子元素
   children?: FormOptions[];
+  // 处理上传组件的属性和方法
+  uploadAttrs?: {
+    action: string;
+    headers?: object;
+    method?: "post" | "put" | "patch";
+    multiple?: boolean;
+    data?: any;
+    name?: string;
+    withCredentials?: boolean;
+    showFileList?: boolean;
+    drag?: boolean;
+    accept?: string;
+    thumbnailMode?: boolean;
+    fileList?: any[];
+    listType?: "text" | "picture" | "picture-card";
+    autoUpload?: boolean;
+    disabled?: boolean;
+    limit?: number;
+  };
 }

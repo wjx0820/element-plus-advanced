@@ -1,12 +1,30 @@
 <template>
   <div>
-    <m-form :options="options" label-width="100px"></m-form>
+    <m-form
+      label-width="100px"
+      :options="options"
+      @on-change="handleChange"
+      @before-upload="handleBeforeUpload"
+      @on-preview="handlePreview"
+      @on-remove="handleRemove"
+      @before-remove="beforeRemove"
+      @on-success="handleSuccess"
+      @on-exceed="handleExceed"
+    >
+      <template #uploadArea>
+        <el-button size="small" type="primary">Click to upload</el-button>
+      </template>
+      <template #uploadTip>
+        <div style="color: #ccc;font-size: 12px;">jpg/png files with a size less than 500kb</div>
+      </template>
+    </m-form>
   </div>
 </template>
 
  
 <script lang='ts' setup>
 import { FormOptions } from '@/components/form/src/types/types';
+import { ElMessage, ElMessageBox } from 'element-plus';
 
 const options: FormOptions[] = [
   {
@@ -132,7 +150,57 @@ const options: FormOptions[] = [
       }
     ]
   },
+  {
+    type: 'upload',
+    label: '上传',
+    prop: 'pic',
+    uploadAttrs: {
+      action: 'https://jsonplaceholder.typicode.com/posts/',
+      multiple: true,
+      limit: 3,
+      listType: 'picture',
+    },
+    rules: [
+      {
+        required: true,
+        message: '图片不能为空',
+        trigger: 'blur'
+      }
+    ],
+  }
 ]
+
+const handleRemove = (file: any, fileList: any) => {
+  console.log('handleRemove')
+  console.log(file, fileList)
+}
+const handlePreview = (file: any) => {
+  console.log('handlePreview')
+  console.log(file)
+}
+const beforeRemove = (val: any) => {
+  console.log('beforeRemove')
+  return ElMessageBox.confirm(`Cancel the transfert of ${val.file.name} ?`)
+}
+const handleExceed = (val: any) => {
+  console.log('handleExceed', val)
+  ElMessage.warning(
+    `The limit is 3, you selected ${val.files.length
+    } files this time, add up to ${val.files.length + val.fileList.length} totally`
+  )
+}
+const handleSuccess = (val: any) => {
+  console.log('success')
+  console.log(val)
+}
+const handleChange = (val: any) => {
+  console.log('change')
+  console.log(val)
+}
+const handleBeforeUpload = (val: any) => {
+  console.log('handleBeforeUpload')
+  console.log(val)
+}
 </script>
 
  
