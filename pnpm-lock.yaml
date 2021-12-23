@@ -2,6 +2,9 @@ lockfileVersion: 5.3
 
 specifiers:
   '@element-plus/icons-vue': ^0.2.4
+  '@fullcalendar/core': ^5.10.1
+  '@fullcalendar/daygrid': ^5.10.1
+  '@fullcalendar/interaction': ^5.10.1
   '@types/lodash-es': ^4.17.5
   '@types/node': ^17.0.0
   '@vitejs/plugin-vue': ^1.9.3
@@ -20,6 +23,9 @@ specifiers:
 
 dependencies:
   '@element-plus/icons-vue': 0.2.4_vue@3.2.26
+  '@fullcalendar/core': 5.10.1
+  '@fullcalendar/daygrid': 5.10.1
+  '@fullcalendar/interaction': 5.10.1
   '@vueuse/core': 7.3.0_vue@3.2.26
   element-plus: 1.2.0-beta.6_vue@3.2.26
   lodash-es: 4.17.21
@@ -372,6 +378,34 @@ packages:
   /@emmetio/scanner/1.0.0:
     resolution: {integrity: sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==}
     dev: true
+
+  /@fullcalendar/common/5.10.1:
+    resolution: {integrity: sha512-EumKIJcQTvQdTs75/9dmeREFgjcRVWzqHJS1Xvlz5mNsmB+w9EINCHETRjChtAQg1WD/lTQyVj4sHsKO7vCMSw==}
+    dependencies:
+      tslib: 2.3.1
+    dev: false
+
+  /@fullcalendar/core/5.10.1:
+    resolution: {integrity: sha512-8sVuC6ywXV+cxqsqTZaR1hgUqeyjVed20NyZ7lGW9AY0kma1GIEwLgqPS5Q6uVhHyin68lmgecKfJCwhxENE8w==}
+    dependencies:
+      '@fullcalendar/common': 5.10.1
+      preact: 10.6.4
+      tslib: 2.3.1
+    dev: false
+
+  /@fullcalendar/daygrid/5.10.1:
+    resolution: {integrity: sha512-sfUMP+rew0krsBffgNcWWKhBCiyytGfRKZJoc64E8ohX7VWjPcPZuB1xgO5U4wPLmNkT0rZiHoGeQGTXw1+ZKg==}
+    dependencies:
+      '@fullcalendar/common': 5.10.1
+      tslib: 2.3.1
+    dev: false
+
+  /@fullcalendar/interaction/5.10.1:
+    resolution: {integrity: sha512-H1g1QeXg7yXtUcKmVtfg7uzm5R5ElFTvYniiXU+8kJda69IDg7Lee+Y7UDv5dvLb5/HxO86RhPVxRtcOQ8XdXw==}
+    dependencies:
+      '@fullcalendar/common': 5.10.1
+      tslib: 2.3.1
+    dev: false
 
   /@popperjs/core/2.11.0:
     resolution: {integrity: sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==}
@@ -1260,6 +1294,10 @@ packages:
       nanoid: 3.1.30
       picocolors: 1.0.0
       source-map-js: 1.0.1
+
+  /preact/10.6.4:
+    resolution: {integrity: sha512-WyosM7pxGcndU8hY0OQlLd54tOU+qmG45QXj2dAYrL11HoyU/EzOSTlpJsirbBr1QW7lICxSsVJJmcmUglovHQ==}
+    dev: false
 
   /promise/7.3.1:
     resolution: {integrity: sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg==}

@@ -2,7 +2,7 @@
 
 - $attrs 属性传递
 - defineProps, defineEmits 的 ts 写法
-- element-plus 表单组件二次封装(抽离配置选项 Options，可以进一步抽离成文件单独维护,代码解耦，维护方便)
+- 表单组件二次封装(抽离配置选项 Options，可以进一步抽离成文件单独维护,代码解耦，维护方便)
 
   - ## 功能
 
@@ -19,5 +19,19 @@
     4. 集成第三方的插件: markdown 编辑器，富文本编辑器...
 
 - [defineExpose](<(https://v3.vuejs.org/api/sfc-script-setup.html#defineexpose)>) 重写表单重置方法
+
   - vue3 移除了$children,因此父组件要获取子组件的实例和方法，需要通过 defineExpose
   - ts 支持有待加强
+
+- 表格组件二次封装
+  ## 功能
+
+1. 可配置型，可维护性高
+2. 具备`element-plus`原有表格的所有功能
+3. 也可以自行拓展更多的功能
+
+## 目的
+
+1. 简单好用
+2. 拓展性高
+3. 可维护性高

@@ -13,7 +13,10 @@
     "lodash-es": "^4.17.21",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12",
-    "wangeditor": "^4.7.10"
+    "wangeditor": "^4.7.10",
+    "@fullcalendar/core": "^5.10.1",
+    "@fullcalendar/daygrid": "^5.10.1",
+    "@fullcalendar/interaction": "^5.10.1"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.5",
