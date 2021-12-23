@@ -128,5 +128,9 @@ const clickAction = (item: ActionOptions, index: number) => {
     text-align: center;
   }
 }
+svg {
+  width: 1em;
+  height: 1em;
+}
 </style>
 
