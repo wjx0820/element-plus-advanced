@@ -27,7 +27,7 @@ const toggle = () => {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  background-color: aquamarine;
+  border-bottom: 1px solid rgba(150, 148, 148, 0.466);
 }
 svg {
   width: 1em;
